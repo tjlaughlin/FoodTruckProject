@@ -18,6 +18,7 @@ public class FoodTruckTester {
 
 		for (int i = 0; i < trucks.length; i++) {
 			System.out.println("Enter the name of FoodTruck " + i + ":");
+			System.out.println("or enter quit if you are done adding trucks");
 			String name = kb.next();
 			if (name.equals("quit")) {
 				break;
@@ -29,6 +30,7 @@ public class FoodTruckTester {
 			int rating = kb.nextInt();
 			FoodTruck truck = new FoodTruck(name, foodType, rating);
 			trucks[i] = truck;
+		
 		}
 		// need to add quit option when they type it in for the name.
 		menu();
@@ -88,14 +90,16 @@ public class FoodTruckTester {
 	public void truckRatings(FoodTruck[] ratings) {
 		double avgRating = 0;
 		double ratingsSum = 0;
+		int counter = 0;
 		for (int i = 0; i < ratings.length; i++) {
-			ratingsSum += (ratings[i].getRating());
 			if (ratings[i] == null) {
 				continue;
 				
 			}
+			ratingsSum += (ratings[i].getRating());
+			counter++;
 		}
-		avgRating = ratingsSum / ratings.length;
+		avgRating = ratingsSum / counter;
 		System.out.println(avgRating);
 	}
 
