@@ -65,13 +65,17 @@ public class FoodTruckTester {
 		} while (keepGoing);
 	}
 
-	public void hiRating(FoodTruck[] hiRating) {
-		double max = hiRating[0].getRating();
+	public void hiRating(FoodTruck [] trucks) {
+		double max = 0;
 		String highestRatedTruck = "";
-		for (int i = 0; i < hiRating.length; i++) {
-			if (max < hiRating[i].getRating()) {
-				max = hiRating[i].getRating();
-				highestRatedTruck = hiRating[i].toString();
+		for (int i = 0; i < trucks.length; i++) {
+			
+			if (trucks[i] == null) {
+				break;
+			}
+			else if (max < trucks[i].getRating()) {
+				max = trucks[i].getRating();
+				highestRatedTruck = trucks[i].toString();
 			}
 		}
 		System.out.println(highestRatedTruck);
