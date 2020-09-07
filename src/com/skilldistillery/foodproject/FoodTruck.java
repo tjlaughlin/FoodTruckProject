@@ -5,7 +5,9 @@ public class FoodTruck {
 	private String name;
 	private String foodType;
 	private double rating;
-	private int idNum = 1;
+	private static int idNum;
+	private static int num;
+	//need another variable
 
 	//need to do something with the static variable. reference end of review video for static variables
 	//
@@ -13,7 +15,8 @@ public class FoodTruck {
 		this.name = name;
 		this.foodType = foodType;
 		this.rating = rating;
-		
+		num = num++;
+		this.idNum = num; 
 
 	}
 
@@ -40,10 +43,17 @@ public class FoodTruck {
 	public void setRating(int Rating) {
 		this.rating = Rating;
 	}
+	public double getIdNum() {
+		return idNum;
+	}
+	
+	public void setIdNum(int IdNum) {
+		this.rating = IdNum;
+	}
 
 	
 	public String toString() {
-		String output = "Name: " + name + " " + "FoodType: " + foodType + " " + "Rating: " + rating + " stars";
+		String output = "Name: " + name + " " + "FoodType: " + foodType + " " + "Rating: " + rating + " stars " + "id number: " + idNum;
 		return output;
 	}
 

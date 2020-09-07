@@ -7,7 +7,6 @@ public class FoodTruckTester {
 	Scanner kb = new Scanner(System.in);
 	FoodTruck[] trucks = new FoodTruck[5];
 	boolean keepGoing = true;
-
 	public static void main(String[] args) {
 		FoodTruckTester ftt = new FoodTruckTester();
 		ftt.run();
@@ -30,7 +29,7 @@ public class FoodTruckTester {
 			int rating = kb.nextInt();
 			FoodTruck truck = new FoodTruck(name, foodType, rating);
 			trucks[i] = truck;
-		
+			
 		}
 		// need to add quit option when they type it in for the name.
 		menu();
@@ -61,19 +60,23 @@ public class FoodTruckTester {
 				break;
 			case 4:
 				keepGoing = false;
+				break;
+			default: 
+				System.out.println("invalid option, enter 1-4 to get desired menu option");
 			}
 		} while (keepGoing);
-	}
+	} 
+	
+	
 
-	public void hiRating(FoodTruck [] trucks) {
+	public void hiRating(FoodTruck[] trucks) {
 		double max = 0;
 		String highestRatedTruck = "";
 		for (int i = 0; i < trucks.length; i++) {
-			
+
 			if (trucks[i] == null) {
 				break;
-			}
-			else if (max < trucks[i].getRating()) {
+			} else if (max < trucks[i].getRating()) {
 				max = trucks[i].getRating();
 				highestRatedTruck = trucks[i].toString();
 			}
@@ -87,7 +90,7 @@ public class FoodTruckTester {
 			if (tr[i] == null) {
 				break;
 			}
-			System.out.println(tr[i].getName());
+			System.out.println(tr[i].toString());
 		}
 	}
 
@@ -98,7 +101,7 @@ public class FoodTruckTester {
 		for (int i = 0; i < ratings.length; i++) {
 			if (ratings[i] == null) {
 				continue;
-				
+
 			}
 			ratingsSum += (ratings[i].getRating());
 			counter++;
