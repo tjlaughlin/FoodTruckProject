@@ -3,7 +3,6 @@ package com.skilldistillery.foodproject;
 import java.util.Scanner;
 
 public class FoodTruckTester {
-	static int idNum = 1;
 	Scanner kb = new Scanner(System.in);
 	FoodTruck[] trucks = new FoodTruck[5];
 	boolean keepGoing = true;
@@ -34,7 +33,6 @@ public class FoodTruckTester {
 			int rating = kb.nextInt();
 			FoodTruck truck = new FoodTruck(name, foodType, rating);
 			trucks[i] = truck;
-			idNum++;
 			
 		}
 		// need to add quit option when they type it in for the name.
