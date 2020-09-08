@@ -3,7 +3,7 @@ package com.skilldistillery.foodproject;
 import java.util.Scanner;
 
 public class FoodTruckTester {
-
+	static int idNum = 1;
 	Scanner kb = new Scanner(System.in);
 	FoodTruck[] trucks = new FoodTruck[5];
 	boolean keepGoing = true;
@@ -12,7 +12,12 @@ public class FoodTruckTester {
 		ftt.run();
 
 	}
-
+	
+	
+	//do i need to do anything to the variable num on the main page? 
+	// ask tina for help then finish the README tonight
+	// if so am i adding it to the parameter on this page? maybe a counter for each time the 
+	
 	private void run() {
 
 		for (int i = 0; i < trucks.length; i++) {
@@ -29,6 +34,7 @@ public class FoodTruckTester {
 			int rating = kb.nextInt();
 			FoodTruck truck = new FoodTruck(name, foodType, rating);
 			trucks[i] = truck;
+			idNum++;
 			
 		}
 		// need to add quit option when they type it in for the name.
